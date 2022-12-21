@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	inforetriever "github.com/xiscobibiloni/starwars-info-extractor-go/internal/domain"
+	"github.com/xiscobibiloni/starwars-info-extractor-go/internal/storage"
 )
 
 const (
@@ -23,6 +24,11 @@ func runCommandPeopleFn(swapiClient inforetriever.InfoRetriever) CobraFn {
 		fmt.Println(file)
 		fmt.Println(people)
 
+		fmt.Println("Save file CSV:")
+
+		var csvStorage = storage.NewCsvStorage()
+		csvStorage.StorageStarWarsPeople(people, file)
+
 		return
 	}
 }
@@ -36,6 +42,10 @@ func runCommandPlanetFn(swapiClient inforetriever.InfoRetriever) CobraFn {
 		fmt.Println(file)
 		fmt.Println(planets)
 
+		fmt.Println("Save file CSV:")
+
+		var csvStorage = storage.NewCsvStorage()
+		csvStorage.StorageStarWarsPlanets(planets, file)
 		return
 	}
 }
