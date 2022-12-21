@@ -2,8 +2,8 @@ package domain
 
 type StarWarsPeople struct {
 	Name      string
-	Height    int
-	Mass      int
+	Height    string
+	Mass      string
 	HairColor string
 	HomeWorld string
 	Gender    string
@@ -13,14 +13,9 @@ type StarWarsPeople struct {
 
 type StarWarsPlanet struct {
 	Name           string
-	RotationPeriod int
-	OrbitalPeriod  int
-	Diameter       int
+	RotationPeriod string
+	OrbitalPeriod  string
+	Diameter       string
 	Climate        string
 	Terrain        string
-}
-
-type InfoRetriever interface {
-	GetStarWarsPeople() ([]StarWarsPeople, error)
-	GetStarWarsPlanets() ([]StarWarsPlanet, error)
 }
