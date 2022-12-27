@@ -6,7 +6,7 @@ Ejercicio solicitado en el curso de [CodelyTv](https://codely.com/) llamado [Int
 # How to use
 Comandos disponibles:
 
-```
+```sh
 $ go run main.go swpeople --file namefilepeople
 
 $ go run main.go swplanets --file namefileplanets
